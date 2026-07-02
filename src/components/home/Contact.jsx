@@ -17,7 +17,7 @@ export default function Contact() {
         <Card className="text-center">
           <Linkedin className="mx-auto mb-3" />
           <p className="text-sm text-[var(--muted)] mb-3">{t("contact.linkedin")}</p>
-          <a href="https://www.linkedin.com/in/ahmed-bensaid-83844225b/" target="_blank" rel="noreferrer" className="font-medium">ahmed-bensaid</a>
+          <a href="https://www.linkedin.com/in/ahmed-ben-said-83844225b/" target="_blank" rel="noreferrer" className="font-medium">ahmed-ben-said</a>
         </Card>
         <Card className="text-center">
           <Github className="mx-auto mb-3" />

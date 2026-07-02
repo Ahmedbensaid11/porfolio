@@ -1,19 +1,19 @@
 const skills = [
   {
     category: "Backend",
-    skills: ["Java", "Spring Boot", "Spring Security", "REST API", "Hibernate", "JPA", "Python", "Odoo"],
+    skills: ["Java", "Spring Boot", "Spring Security", "REST API", "Quarkus", "Python", "PHP", "Odoo"],
   },
   {
     category: "Frontend",
-    skills: ["React", "Angular", "JavaScript", "TypeScript", "HTML", "CSS", "JavaFX", "Flutter"],
+    skills: ["React", "React Native", "Angular", "TypeScript", "JavaScript", "JavaFX", "Flutter", "HTML", "CSS"],
   },
   {
     category: "Databases",
-    skills: ["MySQL", "PostgreSQL", "MongoDB", "Oracle Database"],
+    skills: ["MySQL", "PostgreSQL", "MongoDB", "Redis", "Supabase", "Oracle Database"],
   },
   {
-    category: "Tools",
-    skills: ["Git", "GitHub", "Docker", "Maven", "Swagger", "Postman", "Linux"],
+    category: "Tools & DevOps",
+    skills: ["Git", "GitHub", "Docker", "Nginx", "Maven", "CMake", "Swagger", "Postman", "Linux"],
   },
 ];
 

@@ -15,14 +15,18 @@ export default function Projects() {
         {projects.map((project) => (
           <Link key={project.id} to={`/projects/${project.id}`}>
             <Card className="h-full flex flex-col">
-              <div className="aspect-video rounded-lg bg-[var(--border)]/30 mb-4 overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover"
-                  onError={(e) => (e.target.style.display = "none")}
-                />
-              </div>
+              <div className="aspect-video rounded-lg bg-[var(--border)]/30 mb-4 overflow-hidden flex items-center justify-center">
+  <img
+    src={project.image}
+    alt={project.title}
+    className={
+      project.imageFit === "contain"
+        ? "h-full w-auto object-contain"
+        : "w-full h-full object-cover"
+    }
+    onError={(e) => (e.target.style.display = "none")}
+  />
+</div>
 
               <div className="flex items-center justify-between text-xs text-[var(--muted)] mb-2">
                 <span>{project.category}</span>

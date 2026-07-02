@@ -37,7 +37,9 @@ export default function Experience() {
 
             <p className="text-sm text-[var(--muted)] mt-1">{job.location}</p>
 
-            <p className="mt-3 text-[var(--foreground)]/90">{job.description}</p>
+            <p className="mt-3 text-[var(--foreground)]/90">
+              {job.longDescription || job.description}
+            </p>
 
             <div className="flex flex-wrap gap-2 mt-4">
               {job.technologies.map((tech) => (
