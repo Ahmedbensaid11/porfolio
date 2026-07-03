@@ -19,6 +19,7 @@ export default function Hero() {
       <div className="flex gap-4 mt-4">
         <a href="#projects"><Button>{t("hero.viewProjects")}</Button></a>
         <a href="#contact"><Button variant="outline">{t("hero.contactMe")}</Button></a>
+        
       </div>
     </section>
   );

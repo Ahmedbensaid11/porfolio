@@ -24,7 +24,7 @@ export default function Skills() {
             <Card key={group.category}>
               <div className="flex items-center gap-2 mb-4">
                 <Icon size={18} className="text-[var(--muted)]" />
-                <h3 className="font-semibold text-lg">{group.category}</h3>
+                <h3 className="font-semibold text-lg">{t(`skills_categories.${group.category}`)}</h3>
               </div>
               <div className="flex flex-wrap gap-2">
                 {group.skills.map((skill) => (

@@ -1,4 +1,5 @@
 import { useParams, Link, Navigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import projects from "../data/projects";
 import Badge from "../components/ui/Badge";
 import Button from "../components/ui/Button";
@@ -7,6 +8,7 @@ import Footer from "../components/layout/Footer";
 
 export default function Project() {
   const { id } = useParams();
+  const { t } = useTranslation();
   const project = projects.find((p) => p.id === id);
 
   if (!project) {
@@ -34,7 +36,7 @@ export default function Project() {
           >
             <img
               src={project.image}
-              alt={project.title}
+              alt={t(`projects_data.items.${project.id}.title`)}
               className={
                 project.imageFit === "contain"
                   ? "max-h-[500px] w-auto rounded-xl border border-[var(--border)] object-contain"
@@ -45,15 +47,15 @@ export default function Project() {
         )}
 
         <div className="flex items-center gap-3 text-sm text-[var(--foreground)]/60 mb-2">
-          <span>{project.category}</span>
+          <span>{t(`projects_data.items.${project.id}.category`)}</span>
           <span>·</span>
           <span>{project.year}</span>
         </div>
 
-        <h1 className="text-3xl font-bold mb-4">{project.title}</h1>
+        <h1 className="text-3xl font-bold mb-4">{t(`projects_data.items.${project.id}.title`)}</h1>
 
         <p className="text-[var(--foreground)]/80 mb-6 leading-relaxed">
-          {project.longDescription || project.description}
+          {t(`projects_data.items.${project.id}.longDescription`)}
         </p>
 
         <div className="flex flex-wrap gap-2 mb-8">

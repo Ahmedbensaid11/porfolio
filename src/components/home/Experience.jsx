@@ -2,16 +2,15 @@
 import { useTranslation } from "react-i18next";
 import experience from "../../data/experience";
 
-const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-
-function formatDate(value) {
-  if (value === "Present") return "Present";
-  const [year, month] = value.split("-");
-  return `${MONTHS[parseInt(month, 10) - 1]} ${year}`;
-}
-
 export default function Experience() {
   const { t } = useTranslation();
+  const months = t("months", { returnObjects: true });
+
+  function formatDate(value) {
+    if (value === "Present") return t("education.present");
+    const [year, month] = value.split("-");
+    return `${months[parseInt(month, 10) - 1]} ${year}`;
+  }
 
   return (
     <section id="experience" className="py-24">
@@ -28,17 +27,19 @@ export default function Experience() {
 
             <div className="flex flex-wrap items-baseline justify-between gap-2">
               <h3 className="text-lg font-semibold">
-                {job.position} · {job.company}
+                {t(`experience.items.${job.id}.position`)} · {job.company}
               </h3>
               <span className="text-sm text-[var(--muted)]">
                 {formatDate(job.startDate)} — {formatDate(job.endDate)}
               </span>
             </div>
 
-            <p className="text-sm text-[var(--muted)] mt-1">{job.location}</p>
+            <p className="text-sm text-[var(--muted)] mt-1">
+              {t(`experience.items.${job.id}.location`)}
+            </p>
 
             <p className="mt-3 text-[var(--foreground)]/90">
-              {job.longDescription || job.description}
+              {t(`experience.items.${job.id}.longDescription`)}
             </p>
 
             <div className="flex flex-wrap gap-2 mt-4">
